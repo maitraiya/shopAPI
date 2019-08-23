@@ -17,8 +17,8 @@ app.use('/api/phones',Phones);
 app.use('/api/login',Login);
 app.use(error);
 
-const key = config.get('shopPrivateKey');
-if(!key){ 
+if(!config.get('shopPrivateKey'))
+{ 
     console.log('Fatal Error! PrivateKey not set!')
     process.exit(1);
 }

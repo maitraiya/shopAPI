@@ -11,7 +11,7 @@ describe('/api/phones',()=>{
     });
     describe('get/ ',()=>{
         it('should return all phones',async ()=>{
-            Phone.collection.insertMany([
+            Phone.collection.insertOne([
                 {
                     company: "One-Plus",
                     model: "OnePlus-5T",
@@ -27,7 +27,7 @@ describe('/api/phones',()=>{
             expect(res.status).toBe(200);            
         });
         it('should save and return phone',async()=>{
-            Phone.collection.insertMany([
+            Phone.collection.insertOne([
                 {
                     company: "One-Plus",
                     model: "OnePlus-5T",
