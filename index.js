@@ -23,7 +23,7 @@ app.use('/api/login',Login);
 app.use(error);
 
 
-mongoose.connect(config.get("mongodb+srv://maitraiya:Mait2792580@cluster-k00st.mongodb.net/test?retryWrites=true&w=majority"),{useNewUrlParser:true})
+mongoose.connect("mongodb+srv://maitraiya:Mait2792580@cluster-k00st.mongodb.net/test?retryWrites=true&w=majority",{useNewUrlParser:true})
 .then(()=>console.log('Connected Successfully To Database'))
 .catch((error)=>console.log('Error occured while establishing connection'));
 const port = process.env.PORT || 3000;
