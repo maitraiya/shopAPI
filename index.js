@@ -16,7 +16,7 @@ if(!key){
     process.exit(1);
 }
 app.use(express.json());
-app.use(express.urlencoded(extended=true));
+app.use(express.urlencoded({extended:true}));
 app.use('/api/users',Users);
 app.use('/api/phones',Phones);
 app.use('/api/login',Login);
