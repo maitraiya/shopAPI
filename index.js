@@ -10,11 +10,6 @@ const config = require('config');
 
 winston.add(new winston.transports.File({filename:'log/logfile.log'}));
 
-const key = config.get('shopPrivateKey');
-if(!key){ 
-    console.log('Fatal Error! PrivateKey not set!')
-    process.exit(1);
-}
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 app.use('/api/users',Users);
@@ -22,10 +17,15 @@ app.use('/api/phones',Phones);
 app.use('/api/login',Login);
 app.use(error);
 
+const key = config.get('shopPrivateKey');
+if(!key){ 
+    console.log('Fatal Error! PrivateKey not set!')
+    process.exit(1);
+}
 
-mongoose.connect("mongodb+srv://maitraiya:Mait2792580@cluster-k00st.mongodb.net/test?retryWrites=true&w=majority",{useNewUrlParser:true})
-.then(()=>console.log('Connected Successfully To Database'))
-.catch((error)=>console.log('Error occured while establishing connection'));
+mongoose.connect("mongodb+srv://maitraiya:Mait2792580@cluster-k00st.mongodb.net/test?retryWrites=true&w=majority",{ useNewUrlParser: true })
+.then(()=>console.log("Connected Successfully"))
+.catch((error)=>console.log(error))
 const port = process.env.PORT || 3000;
 const server = app.listen(port,()=>console.log(`Listening on ${port}`))
 
