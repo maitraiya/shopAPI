@@ -8,7 +8,7 @@ const error = require('./middleware/error');
 const app = express();
 const config = require('config');
 
-winston.add(new winston.transports.File({filename:'log/logfile.log'}));
+winston.add(new winston.transports.File({filename:'./log/logfile.log'}));
 
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
