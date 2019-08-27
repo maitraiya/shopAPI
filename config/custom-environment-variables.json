@@ -1,3 +1,4 @@
 {
-    "shopPrivateKey":"shopSecureKey"
+    "shopPrivateKey":"shopSecureKey",
+    "db":"databaseString"
 }
